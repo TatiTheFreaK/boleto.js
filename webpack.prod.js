@@ -8,6 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, 'lib'),
     library: 'Boleto',
     libraryTarget: 'umd',
+    globalObject: '(typeof self !== \'undefined\' ? self : this)',
   },
   module: {
     rules: [

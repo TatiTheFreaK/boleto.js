@@ -56,8 +56,8 @@ class SVG {
   /**
    * Generates an array of stripes that can be used to create a SVG
    *
-   * @param {Integer} begginingHeight Where the SVG would be rendered
-   * @param {Integer} begginingWidth Where the SVG would start to be rendered
+   * @param {Integer} beginningHeight Where the SVG would be rendered
+   * @param {Integer} beginningWidth Where the SVG would start to be rendered
    *
    */
   mapRectangles(beginningHeight, beginningWidth) {

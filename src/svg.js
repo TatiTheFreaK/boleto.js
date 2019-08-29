@@ -70,10 +70,10 @@ class SVG {
       const rectangle = {
         width,
         height: 100,
-        fill: !(i % 2),
+        fill: SVG.color(i),
         x: pos,
         y: beginningHeight,
-      }
+      };
       rectangles.push(rectangle);
     }
 

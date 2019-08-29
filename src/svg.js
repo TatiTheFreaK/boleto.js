@@ -54,6 +54,33 @@ class SVG {
   }
 
   /**
+   * Generates an array of stripes that can be used to create a SVG
+   *
+   * @param {Integer} begginingHeight Where the SVG would be rendered
+   * @param {Integer} begginingWidth Where the SVG would start to be rendered
+   *
+   */
+  mapRectangles(beginningHeight, beginningWidth) {
+    const rectangles = [];
+    let pos = beginningWidth;
+    let width = 0;
+
+    for (let i = 0; i < this.stripes.length; i += 1, pos += width) {
+      width = this.stripeWidth * this.stripes[i];
+      const rectangle = {
+        width,
+        height: 100,
+        fill: !(i % 2),
+        x: pos,
+        y: beginningHeight,
+      }
+      rectangles.push(rectangle);
+    }
+
+    return rectangles;
+  }
+
+  /**
    * Calculates the total width of the barcode
    *
    * The calculation method is the sum of the weight of the stripes multiplied

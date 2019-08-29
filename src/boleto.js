@@ -193,6 +193,18 @@ class Boleto {
     const stripes = ITF.encode(this.barcode());
     return new SVG(stripes).render(selector);
   }
+
+  /**
+   * Generates an array of stripes that can be used to create a SVG
+   *
+   * @param {Integer} begginingHeight Where the SVG would be rendered
+   * @param {Integer} begginingWidth Where the SVG would start to be rendered
+   *
+   */
+  mapRectangles(beginningHeight = 0, beginningWidth = 0) {
+    const stripes = ITF.encode(this.barcode());
+    return new SVG(stripes).mapRectangles(beginningHeight, beginningWidth);
+  }
 }
 
 module.exports = Boleto;
